@@ -17,8 +17,7 @@ const path = require("path");
  app.use(bodyparser.urlencoded({extended:true}))
  
  //set view engine
- app.set("view engine","ejs")
- // app.set("views",path.resolve(__dirname,"src/views/ejs"))  If the ejs file are in the different folder, We should use this code line
+ app.set("views", path.resolve(__dirname, "src/views"));
 
  //load assests
 app.use('/css',express.static(path.resolve(__dirname,"src/assests/css")))
@@ -27,7 +26,7 @@ app.use('/js',express.static(path.resolve(__dirname,"src/assests/js")))
 
 
  app.get('/',(req,res) => {
-    res.send("Crud Application");
+    res.render('index.ejs');
  })
 
  app.listen(PORT,()=>{console.log(`Server is running on http://localhost:${PORT}`)});
