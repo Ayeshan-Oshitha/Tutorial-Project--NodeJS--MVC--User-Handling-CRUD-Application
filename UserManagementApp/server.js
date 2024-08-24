@@ -29,4 +29,12 @@ app.use('/js',express.static(path.resolve(__dirname,"src/assests/js")))
     res.render('index.ejs');
  })
 
+ app.get('/add-user',(req,res) => {
+   res.render('add_user.ejs');
+})
+
+app.get('/update_user',(req,res) => {
+   res.render('update_user.ejs');
+})
+
  app.listen(PORT,()=>{console.log(`Server is running on http://localhost:${PORT}`)});
